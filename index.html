@@ -362,36 +362,33 @@
             }
 
             // 流れるサムネ作成
-            function createFlowThumbs(containerId, count, repeat = 2){
-                const container = document.getElementById(containerId);
-                const selected = getRandomImages(images, count);
-
-        // repeat 回数だけ繰り返して複製
-                let loopImages = [];
-                for (let i = 0; i < repeat; i++) {
-                    loopImages = loopImages.concat(selected);
-        }
-
-        loopImages.forEach(src => {
-            const div = document.createElement("div");
-            div.className = "thumb";
-            div.style.backgroundImage = `url(${src})`;
-            container.appendChild(div);
-        });
+function createFlowThumbs(containerId, count, repeat = 4) { // repeatを4に増やす
+    const container = document.getElementById(containerId);
+    const selected = getRandomImages(images, count);
+    let loopImages = [];
+    for (let i = 0; i < repeat; i++) {
+        loopImages = loopImages.concat(selected);
     }
+    loopImages.forEach(src => {
+        const div = document.createElement("div");
+        div.className = "thumb";
+        div.style.backgroundImage = `url(${src})`;
+        container.appendChild(div);
+    });
+}
 
-        // ページロード時
-        window.addEventListener("load", () => {
-            if (window.innerWidth <= 600) {
-        //  スマホは5枚×3セット
-                createFlowThumbs("bg-top", 5, 3);
-                createFlowThumbs("bg-bottom", 5, 3);
-            } else {
-        //  PC/タブレットは5枚×2セット
-                createFlowThumbs("bg-top", 5, 2);
-                createFlowThumbs("bg-bottom", 5, 2);
-            }
-        });
+// ページロード時
+window.addEventListener("load", () => {
+    const repeat = 3; // 変更: 3セットでシームレス
+    let count = 5;
+    if (window.innerWidth <= 1024) { // 変更: タブレット以下も調整
+        createFlowThumbs("bg-top", count, repeat);
+        createFlowThumbs("bg-bottom", count, repeat);
+    } else {
+        createFlowThumbs("bg-top", count, repeat);
+        createFlowThumbs("bg-bottom", count, repeat);
+    }
+});
 
     </script>
 </body>
