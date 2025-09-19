@@ -14,9 +14,9 @@ body {
     padding: 0;
 }
 
-/* スムーズスクロール明示的に無効化（Safari挙動安定） */
+/* スムーズスクロール明示的に無効化 */
 html {
-    scroll-behavior: auto; /* スムーズスクロールオフ */
+    scroll-behavior: auto;
 }
 
 footer {
@@ -135,7 +135,8 @@ header ul li a:focus {
 /* セクション1 */
 .section1 {
     position: relative;
-    height: calc(100dvh - 60px); /* 100vh→100dvh、ヘッダー60px除外 */
+    height: calc(100dvh - 60px); /* ヘッダー除外 */
+    min-height: 600px; /* 初期高さ保証 */
     display: flex;
     align-items: flex-start;
     overflow: hidden;
@@ -148,26 +149,27 @@ header ul li a:focus {
     position: absolute;
     left: 0;
     width: calc(20% * 15);
-    height: 200px;
-    opacity: 0.7;
+    height: 150px; /* モバイル固定 */
+    opacity: 0.6;
     z-index: 0;
     will-change: transform;
-    animation: flow 40s linear infinite;
+    animation: flow 30s linear infinite; /* 25s→30s、動き穏やか */
 }
 
 #bg-top { 
-    top: 80px;
+    top: 100px;
 }
 #bg-bottom { 
-    bottom: 0;
-    height: 200px;
+    bottom: 20px; /* bottom: 0→20px、下端余白 */
+    height: 150px;
 }
 
 .thumb {
-    width: 20%;
-    height: 200px;
-    background-size: cover;
+    width: 22%;
+    height: 150px;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 #bg-bottom .thumb {
@@ -186,14 +188,14 @@ header ul li a:focus {
     width: 90%;
     max-width: 1080px;
     margin: 0 auto;
-    padding-top: 200px; /* 30vh→200px、固定値で安定 */
+    padding-top: 200px; /* 180px→200px、余裕追加 */
 }
 
 .section1 .filter {
     width: 100%;
-    height: 100dvh; /* 100vh→100dvh、アドレスバー影響軽減 */
+    height: 100dvh;
     background-color: black;
-    opacity: 0.2;
+    opacity: 0.25;
     position: absolute;
     top: 0;
     left: 0;
@@ -201,38 +203,38 @@ header ul li a:focus {
 }
 
 .section1 .heading {
-    font-size: 28px;
+    font-size: clamp(16px, 4vw, 18px);
     font-weight: 700;
     margin: 20px 0;
     color: #00CED1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 5px 10px;
     border-radius: 4px;
     display: inline-block;
 }
 
 .section1 h1 {
-    font-size: 52px;
+    font-size: clamp(24px, 6vw, 26px);
     font-weight: 700;
     margin-bottom: 40px;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px;
     border-radius: 8px;
 }
 
 .section1 .text {
-    font-size: 24px;
+    font-size: clamp(15px, 4vw, 16px);
     margin-bottom: 40px;
     color: white;
 }
 
 .section1 .youtube {
-    font-size: 18px;
+    font-size: clamp(13px, 3vw, 14px);
     font-weight: 700;
-    padding: 16px 40px 20px 40px;
+    padding: 10px 20px;
     display: inline-block;
     background-color: red;
     color: white;
@@ -516,7 +518,7 @@ header ul li a:focus {
 .fade-in-section {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 2s ease, transform 2s ease;
+    transition: opacity 1s ease, transform 1s ease; /* 2s→1s、軽快に */
 }
 
 .fade-in-section.visible {
@@ -615,7 +617,7 @@ header ul li a:focus {
     }
 
     .section1 .container {
-        padding-top: 250px; /* 20vh+100px→250px、固定値で安定 */
+        padding-top: 250px;
     }
 
     .section1 .heading {
@@ -751,8 +753,8 @@ header ul li a:focus {
     .bg-flow {
         width: calc(22% * 15);
         height: 150px;
-        opacity: 0.6;
-        animation-duration: 25s;
+        opacity: 0.5; /* 0.6→0.5、目立ち軽減 */
+        animation-duration: 30s;
     }
 
     .thumb {
@@ -774,7 +776,7 @@ header ul li a:focus {
     }
 
     .section1 .container {
-        padding-top: 180px; /* 35vh→180px、モバイルで安定 */
+        padding-top: 200px;
     }
 
     .section1 .heading {
@@ -802,7 +804,7 @@ header ul li a:focus {
     }
 
     .section1 .filter {
-        height: 100dvh; /* 100vh→100dvh、アドレスバー対応 */
+        height: 100dvh;
         opacity: 0.25;
     }
 
