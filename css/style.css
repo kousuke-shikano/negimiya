@@ -12,11 +12,8 @@ body {
     background: linear-gradient(to bottom, #E0FFFF, #F0E68C, #AFEEEE);
     margin: 0;
     padding: 0;
-}
-
-/* スムーズスクロール明示的に無効化 */
-html {
-    scroll-behavior: auto;
+    overflow-y: scroll; /* バウンス効果を軽減 */
+    -webkit-overflow-scrolling: touch; /* iOSスムーズスクロールを無効化 */
 }
 
 footer {
@@ -135,8 +132,8 @@ header ul li a:focus {
 /* セクション1 */
 .section1 {
     position: relative;
-    height: calc(100dvh - 60px); /* ヘッダー除外 */
-    min-height: 600px; /* 初期高さ保証 */
+    height: calc(100dvh - 60px);
+    min-height: 600px;
     display: flex;
     align-items: flex-start;
     overflow: hidden;
@@ -149,18 +146,18 @@ header ul li a:focus {
     position: absolute;
     left: 0;
     width: calc(20% * 15);
-    height: 150px; /* モバイル固定 */
-    opacity: 0.6;
+    height: 150px;
+    opacity: 0.5;
     z-index: 0;
     will-change: transform;
-    animation: flow 30s linear infinite; /* 25s→30s、動き穏やか */
+    animation: flow 30s linear infinite;
 }
 
 #bg-top { 
     top: 100px;
 }
 #bg-bottom { 
-    bottom: 20px; /* bottom: 0→20px、下端余白 */
+    bottom: 20px;
     height: 150px;
 }
 
@@ -188,7 +185,7 @@ header ul li a:focus {
     width: 90%;
     max-width: 1080px;
     margin: 0 auto;
-    padding-top: 200px; /* 180px→200px、余裕追加 */
+    padding-top: 200px;
 }
 
 .section1 .filter {
@@ -518,7 +515,7 @@ header ul li a:focus {
 .fade-in-section {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease; /* 2s→1s、軽快に */
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-in-section.visible {
@@ -753,7 +750,7 @@ header ul li a:focus {
     .bg-flow {
         width: calc(22% * 15);
         height: 150px;
-        opacity: 0.5; /* 0.6→0.5、目立ち軽減 */
+        opacity: 0.5;
         animation-duration: 30s;
     }
 
