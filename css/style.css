@@ -7,27 +7,27 @@
 
 body {
     font-family: 'Zen Kaku Gothic New', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: linear-gradient(to bottom, #E0FFFF, #F0E68C, #AFEEEE);
+    line-height: 1.8;
+    color: #1A2A2A;
+    background: linear-gradient(to bottom, #FFF9B1, #00CED1, #E0FFFF);
     margin: 0;
     padding: 0;
 }
 
 footer {
-    background-color: #FFFFFF;
-    border-top: 1px solid #DDD;
+    background-color: #1A2A2A;
+    border-top: 1px solid #00CD66;
     box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
     padding: 40px 0;
     text-align: center;
-    color: #333;
+    color: #FFF9B1;
 }
 
 /* ローディング画面 */
 #loading {
     position: fixed;
     inset: 0;
-    background: #fff;
+    background: #FFF9B1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,15 +43,15 @@ footer {
 
 .loading img {
     width: 80vw;
-    max-width: 400px; /* 統一: 全デバイスで400px上限、PCでvwが効く */
+    max-width: 400px;
     height: auto;
-    object-fit: contain; /* 追加: 画像の歪み防止 */
+    object-fit: contain;
 }
 
-/* PCで少し大きく (オプション、vwで自然に調整) */
+/* PCで少し大きく */
 @media (min-width: 1025px) {
     .loading img {
-        max-width: 500px; /* 600pxから500pxに抑え、バランス重視 */
+        max-width: 500px;
     }
 }
 
@@ -78,7 +78,7 @@ header {
 }
 
 header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(26, 42, 42, 0.95);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -99,7 +99,7 @@ header .row {
 header .logo {
     font-size: 24px;
     text-decoration: none;
-    color: #333;
+    color: #00CED1;
 }
 
 header ul {
@@ -112,8 +112,13 @@ header ul li {
     letter-spacing: 1px;
 }
 
+header ul li a {
+    color: #00CED1;
+    text-decoration: none;
+}
+
 header ul li a:focus {
-    outline: 2px solid #333;
+    outline: 2px solid #00CD66;
     outline-offset: 2px;
     border-radius: 4px;
 }
@@ -130,9 +135,9 @@ header ul li a:focus {
 /* セクション1 */
 .section1 {
     position: relative;
-    height: 100vh; /* 変更: 固定に戻し、バランス安定 */
+    height: 100vh;
     display: flex;
-    align-items: flex-start; /* 変更: center → flex-start で上寄せ、隙間自然に */
+    align-items: flex-start;
     overflow: hidden;
     padding-top: 60px;
     box-sizing: border-box;
@@ -151,9 +156,7 @@ header ul li a:focus {
 }
 
 #bg-top { top: 60px; }
-#bg-bottom { 
-    bottom: 0; /* 変更: 全デバイスでbottom: 0 に統一、下段表示確保 */
-}
+#bg-bottom { bottom: 0; }
 
 .thumb {
     width: 20%;
@@ -172,18 +175,21 @@ header ul li a:focus {
 }
 
 .section1 .container {
-    position: relative;
+    position: absolute;
     z-index: 2;
     text-align: center;
-    width: 90%;
+    width: 95%;
     max-width: 1080px;
     margin: 0 auto;
-    padding-top: 20vh; /* 追加: 上寄せでコンテンツを下にずらし、下段とバランス */
+    top: 50%; /* 垂直中央 */
+    left: 50%; /* 横中央 */
+    transform: translate(-50%, -50%); /* 完全中央 */
+    padding-top: 0; /* 不要な余白削除 */
 }
 
 .section1 .filter {
     width: 100%;
-    height: 100vh; /* 変更: 100vh固定でフィルター安定 */
+    height: 100vh;
     background-color: black;
     opacity: 0.1;
     position: absolute;
@@ -193,50 +199,79 @@ header ul li a:focus {
 }
 
 .section1 .heading {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
-    margin: 20px 0;
-    color: #00CED1;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin: 5px 0;
+    color: #00CD66;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    line-height: 1.1;
 }
 
 .section1 h1 {
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 40px;
-    color: white;
+    margin: 8px 0;
+    color: #00CED1;
+    line-height: 1.2;
 }
 
 .section1 .text {
-    font-size: 20px;
-    margin-bottom: 40px;
-    color: white;
+    font-size: 14px;
+    margin: 5px 0 10px;
+    color: #1A2A2A;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .section1 .youtube {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 16px 40px 20px 40px;
+    padding: 8px 24px;
     display: inline-block;
-    background-color: red;
-    color: white;
+    background-color: #FF0000;
+    color: #FFF9B1;
     border-radius: 6px;
     transition: background-color 0.5s;
-    margin-bottom: 30px;
+    position: relative;
+    z-index: 3;
+    margin-top: 8px; /* テキストとの間隔 */
 }
-
 .section1 .youtube:hover {
     background-color: darkred;
     text-decoration: none;
-    color: white;
+    color: #FFF9B1;
 }
 
 .section1 .youtube:focus {
-    outline: 2px solid #00CED1;
+    outline: 2px solid #00CD66;
     outline-offset: 2px;
 }
 
-/* セクション2以降は変更なし (省略してバランスを維持、必要なら全文コピー) */
+/* モバイル (600px以下) */
+@media (max-width: 600px) {
+    .section1 .heading { font-size: 16px; line-height: 1.1; }
+    .section1 h1 { font-size: 24px; line-height: 1.2; }
+    .section1 .text { font-size: 12px; line-height: 1.1; }
+    .section1 .youtube { font-size: 12px; padding: 6px 18px; }
+}
+
+/* タブレット (601px〜1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .section1 .heading { font-size: 18px; line-height: 1.1; }
+    .section1 h1 { font-size: 28px; line-height: 1.2; }
+    .section1 .text { font-size: 13px; line-height: 1.2; }
+    .section1 .youtube { font-size: 13px; padding: 7px 20px; }
+}
+
+/* PC (1025px以上) */
+@media (min-width: 1025px) {
+    .section1 .heading { font-size: 20px; line-height: 1.1; }
+    .section1 h1 { font-size: 36px; line-height: 1.2; }
+    .section1 .text { font-size: 14px; line-height: 1.2; }
+    .section1 .youtube { font-size: 14px; padding: 8px 24px; }
+}
+
+/* セクション2 */
 .section2 {
     padding: 45px 0;
     background-color: #E0FFFF;
@@ -257,8 +292,8 @@ header ul li a:focus {
 }
 
 .section2 .col {
-    background-color: Khaki;
-    color: DarkGreen;
+    background-color: #FFF9B1;
+    color: #1A2A2A;
     width: 32%;
     padding: 20px;
     z-index: 2;
@@ -275,21 +310,22 @@ header ul li a:focus {
 .section2 h2 {
     font-size: 20px;
     font-weight: 700;
-    color: #000000;
+    color: #00CD66;
     margin-bottom: 16px;
 }
 
 .section2 hr {
-    border: solid 2px #006400;
+    border: solid 2px #00CD66;
     margin-bottom: 16px;
     width: 48px;
 }
 
 .section2 .text {
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
+/* セクション3 */
 .section3 {
     background-color: #E0FFFF;
     padding: 45px 0 40px;
@@ -316,7 +352,7 @@ header ul li a:focus {
 .section3 h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #000000;
+    color: #00CD66;
     margin-bottom: 18px;
     line-height: 1.3;
 }
@@ -329,8 +365,8 @@ header ul li a:focus {
 
 .section3 .text {
     font-size: 16px;
-    color: #333333;
-    line-height: 1.5;
+    color: #1A2A2A;
+    line-height: 1.8;
     margin-bottom: 20px;
 }
 
@@ -347,6 +383,7 @@ header ul li a:focus {
     }
 }
 
+/* セクション4 */
 .section4 {
     background-color: #F0E68C;
     padding: 50px 0;
@@ -361,13 +398,13 @@ header ul li a:focus {
 .section4 h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #006400;
+    color: #00CD66;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .section4 hr {
-    border: solid 2px green;
+    border: solid 2px #00CD66;
     margin: 0 auto 40px;
     width: 60px;
 }
@@ -379,16 +416,16 @@ header ul li a:focus {
 }
 
 .section4 li {
-    border: solid 1px #006400;
-    background-color: #FFFFFF;
-    color: #333333;
+    border: solid 1px #00CED1;
+    background-color: #FDFDF0; /* 優しいクリーム色 */
+    color: #1A2A2A;
     font-size: 16px;
     margin-bottom: 20px;
     padding: 16px 24px;
 }
 
 .section4 .date {
-    color: #000000;
+    color: #00CD66;
     font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 6px;
@@ -408,9 +445,9 @@ header ul li a:focus {
     display: block;
     margin: 20px auto 0;
     padding: 8px 20px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #006400;
-    border: 1px solid rgba(0, 100, 0, 0.4);
+    background-color: rgba(255, 249, 177, 0.6);
+    color: #00CD66;
+    border: 1px solid #00CED1;
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
@@ -419,10 +456,11 @@ header ul li a:focus {
 }
 
 #toggleNews:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 249, 177, 0.8);
     transform: translateY(-2px);
 }
 
+/* セクション5 */
 .section5 {
     background-color: #AFEEEE;
     padding: 50px 0;
@@ -439,12 +477,12 @@ header ul li a:focus {
     font-size: 28px;
     font-weight: 700;
     text-align: center;
-    color: #006400;
+    color: #00CD66;
     margin-bottom: 20px;
 }
 
 .section5 hr {
-    border: solid 2px #006400;
+    border: solid 2px #00CD66;
     width: 60px;
     margin: 0 auto 40px;
 }
@@ -467,30 +505,30 @@ header ul li a:focus {
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    color: white;
+    color: #FFFFFF; /* 白抜き文字 */
 }
 
-.section5 a.youtube { background-color: #FF0000; }
-.section5 a.X { background-color: #000000; }
-.section5 a.marshmallow { background-color: #FFF9B1; color: #007F66; }
-.section5 a.skeb { background-color: #00CED1; }
-.section5 a.booth { background-color: #F0E68C; color: #006400; }
+.section5 a.youtube { background-color: #FF0000; } /* YouTube: 赤 */
+.section5 a.X { background-color: #000000; } /* X: 黒 */
+.section5 a.marshmallow { background-color: #FFF9B1; color: #007F66; } /* Marshmallow: クリーム */
+.section5 a.skeb { background-color: #00CED1; } /* Skeb: 水色 */
+.section5 a.booth { background-color: #F0E68C; color: #006400; } /* Booth: クリーム寄り */
 
 .section5 a:hover {
     transform: scale(1.05);
     opacity: 0.9;
     background-color: #EEE8AA;
-    color: #006400;
+    color: #00CD66;
 }
 
 .section5 a.marshmallow:hover {
     background-color: #FFD700;
-    color: #5A7D7A;
+    color: #1A2A2A;
 }
 
 .section5 a.booth:hover {
     background-color: #DAA520;
-    color: #FFFFFF;
+    color: #1A2A2A;
 }
 
 /* フェードインアニメーション */
@@ -505,8 +543,6 @@ header ul li a:focus {
     transform: translateY(0);
 }
 
-/* レスポンシブデザイン */
-
 /* タブレット (601px〜1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
     .pc-nav { display: none; }
@@ -519,8 +555,7 @@ header ul li a:focus {
     }
 
     header .logo {
-        font-size: clamp(18px, 3vw, 20px);
-        white-space: nowrap;
+        font-size: 18px;
     }
 
     .hamburger {
@@ -534,7 +569,7 @@ header ul li a:focus {
     .hamburger span {
         width: 28px;
         height: 3px;
-        background-color: #333;
+        background-color: #00CED1;
         border-radius: 2px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
@@ -556,7 +591,7 @@ header ul li a:focus {
         top: 60px;
         right: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(26, 42, 42, 0.95);
         z-index: 2;
     }
 
@@ -569,9 +604,10 @@ header ul li a:focus {
     }
 
     .mobile-nav a {
-        color: #333;
+        color: #FFF9B1;
         text-decoration: none;
         font-weight: bold;
+        font-size: 16px;
     }
 
     .scatter-fly {
@@ -596,25 +632,7 @@ header ul li a:focus {
     }
 
     .section1 .container {
-        padding-top: calc(20vh + 100px); /* 変更: 下段高さ分下げる */
-    }
-
-    .section1 .heading {
-        font-size: clamp(18px, 3vw, 20px);
-    }
-
-    .section1 h1 {
-        font-size: clamp(32px, 4vw, 36px);
-        line-height: 1.3;
-    }
-
-    .section1 .text {
-        font-size: clamp(16px, 3vw, 18px);
-    }
-
-    .section1 .youtube {
-        font-size: clamp(13px, 2vw, 14px);
-        padding: 12px 28px;
+        padding-top: calc(20vh + 100px);
     }
 
     .section2 .row,
@@ -629,23 +647,25 @@ header ul li a:focus {
     }
 
     .section2 h2 {
-        font-size: clamp(18px, 2.5vw, 20px);
+        font-size: 18px;
     }
 
     .section2 .text {
-        font-size: clamp(14px, 2vw, 15px);
+        font-size: 14px;
+        line-height: 1.8;
     }
 
     .section3 h2 {
-        font-size: clamp(24px, 3vw, 28px);
+        font-size: 24px;
     }
 
     .section3 .text {
-        font-size: clamp(15px, 2vw, 16px);
+        font-size: 15px;
+        line-height: 1.8;
     }
 
     .section4 h2 {
-        font-size: clamp(24px, 3vw, 28px);
+        font-size: 24px;
     }
 
     .section5 ul {
@@ -657,7 +677,7 @@ header ul li a:focus {
         width: 100%;
         max-width: 300px;
         text-align: center;
-        font-size: clamp(14px, 2vw, 16px);
+        font-size: 14px;
     }
 }
 
@@ -669,8 +689,7 @@ header ul li a:focus {
     .mobile-nav.active { display: block; }
 
     header .logo {
-        font-size: clamp(16px, 5vw, 18px);
-        white-space: nowrap;
+        font-size: 16px;
     }
 
     .hamburger {
@@ -684,7 +703,7 @@ header ul li a:focus {
     .hamburger span {
         width: 28px;
         height: 3px;
-        background-color: #333;
+        background-color: #00CED1;
         border-radius: 2px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
@@ -706,7 +725,7 @@ header ul li a:focus {
         top: 60px;
         right: 0;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: rgba(26, 42, 42, 0.95);
         z-index: 2;
     }
 
@@ -719,9 +738,10 @@ header ul li a:focus {
     }
 
     .mobile-nav a {
-        color: #333;
+        color: #FFF9B1;
         text-decoration: none;
         font-weight: bold;
+        font-size: 14px;
     }
 
     .scatter-fly {
@@ -732,7 +752,7 @@ header ul li a:focus {
     .bg-flow {
         width: calc(22% * 15);
         height: auto;
-        animation-duration: 20s; 
+        animation-duration: 20s;
     }
 
     .thumb {
@@ -750,25 +770,23 @@ header ul li a:focus {
     }
 
     .section1 .container {
-        padding-top: calc(20vh + 70px); /* 変更: 下段高さ分下げる */
+        padding-top: calc(20vh + 70px);
     }
 
     .section1 .heading {
-        font-size: clamp(14px, 4vw, 16px);
+        font-size: 16px;
     }
 
     .section1 h1 {
-        font-size: clamp(22px, 6vw, 20px);
-        line-height: 1.3;
+        font-size: 24px;
     }
 
     .section1 .text {
-        font-size: clamp(13px, 4vw, 14px);
+        font-size: 12px;
     }
 
     .section1 .youtube {
-        font-size: clamp(11px, 3vw, 12px);
-        padding: 10px 20px;
+        font-size: 12px;
     }
 
     .section2 .row,
@@ -791,11 +809,12 @@ header ul li a:focus {
     }
 
     .section2 h2 {
-        font-size: clamp(16px, 3vw, 18px);
+        font-size: 16px;
     }
 
     .section2 .text {
-        font-size: clamp(13px, 3vw, 14px);
+        font-size: 13px;
+        line-height: 1.8;
     }
 
     .section3 .col {
@@ -803,32 +822,33 @@ header ul li a:focus {
     }
 
     .section3 h2 {
-        font-size: clamp(22px, 4vw, 24px);
+        font-size: 22px;
     }
 
     .section3 .text {
-        font-size: clamp(13px, 3vw, 14px);
+        font-size: 13px;
+        line-height: 1.8;
     }
 
     .section4 h2 {
-        font-size: clamp(22px, 4vw, 24px);
+        font-size: 22px;
     }
 
     .section4 li {
-        font-size: clamp(13px, 3vw, 14px);
+        font-size: 13px;
         padding: 12px 16px;
     }
 
     .section4 .date {
-        font-size: clamp(11px, 3vw, 12px);
+        font-size: 11px;
     }
 
     .section5 h2 {
-        font-size: clamp(22px, 4vw, 24px);
+        font-size: 22px;
     }
 
     .section5 a {
-        font-size: clamp(13px, 3vw, 14px);
+        font-size: 13px;
         padding: 10px 20px;
     }
 }
