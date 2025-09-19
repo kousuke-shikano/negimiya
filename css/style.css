@@ -249,6 +249,10 @@ header ul li a:focus {
 
 /* モバイル (600px以下) */
 @media (max-width: 600px) {
+    .section1 .container {
+        top: 38%; /* スマホはさらに少し上に */
+        transform: translate(-50%, -50%);
+    }
     .section1 .heading { font-size: 16px; line-height: 1.1; }
     .section1 h1 { font-size: 24px; line-height: 1.2; }
     .section1 .text { font-size: 12px; line-height: 1.1; }
@@ -257,6 +261,10 @@ header ul li a:focus {
 
 /* タブレット (601px〜1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
+    .section1 .container {
+        top: 40%; /* 元は50% → 少し上に移動 */
+        transform: translate(-50%, -50%);
+    }
     .section1 .heading { font-size: 18px; line-height: 1.1; }
     .section1 h1 { font-size: 28px; line-height: 1.2; }
     .section1 .text { font-size: 13px; line-height: 1.2; }
