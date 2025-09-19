@@ -43,8 +43,16 @@ footer {
 
 .loading img {
     width: 80vw;
-    max-width: 400px;
+    max-width: 400px; /* 統一: 全デバイスで400px上限、PCでvwが効く */
     height: auto;
+    object-fit: contain; /* 追加: 画像の歪み防止 */
+}
+
+/* PCで少し大きく (オプション、vwで自然に調整) */
+@media (min-width: 1025px) {
+    .loading img {
+        max-width: 500px; /* 600pxから500pxに抑え、バランス重視 */
+    }
 }
 
 /* 飛び散るアイコン */
@@ -122,9 +130,9 @@ header ul li a:focus {
 /* セクション1 */
 .section1 {
     position: relative;
-    min-height: 100vh; /* 変更: height → min-height で伸縮対応 */
+    height: 100vh; /* 変更: 固定に戻し、バランス安定 */
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 変更: center → flex-start で上寄せ、隙間自然に */
     overflow: hidden;
     padding-top: 60px;
     box-sizing: border-box;
@@ -144,9 +152,7 @@ header ul li a:focus {
 
 #bg-top { top: 60px; }
 #bg-bottom { 
-    bottom: 0; 
-    /* 追加: タブレット/モバイルで隙間埋め */
-    top: auto;
+    bottom: 0; /* 変更: 全デバイスでbottom: 0 に統一、下段表示確保 */
 }
 
 .thumb {
@@ -172,11 +178,12 @@ header ul li a:focus {
     width: 90%;
     max-width: 1080px;
     margin: 0 auto;
+    padding-top: 20vh; /* 追加: 上寄せでコンテンツを下にずらし、下段とバランス */
 }
 
 .section1 .filter {
     width: 100%;
-    height: 100%; /* 変更: 100vh → 100% で伸縮対応 */
+    height: 100vh; /* 変更: 100vh固定でフィルター安定 */
     background-color: black;
     opacity: 0.1;
     position: absolute;
@@ -229,7 +236,7 @@ header ul li a:focus {
     outline-offset: 2px;
 }
 
-/* セクション2 */
+/* セクション2以降は変更なし (省略してバランスを維持、必要なら全文コピー) */
 .section2 {
     padding: 45px 0;
     background-color: #E0FFFF;
@@ -283,10 +290,9 @@ header ul li a:focus {
     line-height: 1.5;
 }
 
-/* セクション3 */
 .section3 {
     background-color: #E0FFFF;
-    padding: 45px 0 40px; /* 変更: 下部paddingを40pxに（隙間調整） */
+    padding: 45px 0 40px;
 }
 
 .section3 .container {
@@ -341,10 +347,9 @@ header ul li a:focus {
     }
 }
 
-/* セクション4 */
 .section4 {
     background-color: #F0E68C;
-    padding: 50px 0; /* 変更: 60px → 50px（隙間調整） */
+    padding: 50px 0;
 }
 
 .section4 .container {
@@ -418,10 +423,9 @@ header ul li a:focus {
     transform: translateY(-2px);
 }
 
-/* セクション5 */
 .section5 {
     background-color: #AFEEEE;
-    padding: 50px 0; /* 変更: 60px → 50px（隙間調整） */
+    padding: 50px 0;
     margin-bottom: 60px;
 }
 
@@ -578,18 +582,21 @@ header ul li a:focus {
     .bg-flow {
         width: calc(20% * 15);
         animation-duration: 30s;
-        /* 変更: height: 160px; を削除 → PCの225px継承 */
     }
 
     .thumb {
         width: 20%;
         aspect-ratio: 480/225;
-        min-height: 225px; /* 変更: 120px → 225px で統一 */
+        min-height: 225px;
     }
 
     @keyframes flow {
         from { transform: translateX(0); }
         to { transform: translateX(-33.33%); }
+    }
+
+    .section1 .container {
+        padding-top: calc(20vh + 100px); /* 変更: 下段高さ分下げる */
     }
 
     .section1 .heading {
@@ -723,22 +730,27 @@ header ul li a:focus {
     }
 
     .bg-flow {
-        width: calc(25% * 12); /* 変更: 25%で12枚、横幅確保 */
+        width: calc(22% * 15);
         height: auto;
         animation-duration: 20s; 
     }
 
     .thumb {
-        width: 25%; /* 変更: 20% → 25% で横幅拡大 */
-        aspect-ratio: 480/225;
-        min-height: 225px; /* 変更: 120px → 225px 統一 */
-        background-size: cover;
+        width: 22%;
+        aspect-ratio: 400/225;
+        min-height: 225px;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
     }
 
     @keyframes flow {
         from { transform: translateX(0); }
-        to { transform: translateX(-33.33%); } /* 12枚の1/3でシームレス */
+        to { transform: translateX(-33.33%); }
+    }
+
+    .section1 .container {
+        padding-top: calc(20vh + 70px); /* 変更: 下段高さ分下げる */
     }
 
     .section1 .heading {
@@ -746,7 +758,7 @@ header ul li a:focus {
     }
 
     .section1 h1 {
-        font-size: clamp(22px, 6vw, 24px);
+        font-size: clamp(22px, 6vw, 22px);
         line-height: 1.3;
     }
 
@@ -820,3 +832,4 @@ header ul li a:focus {
         padding: 10px 20px;
     }
 }
+test
