@@ -259,9 +259,10 @@ header ul li a:focus {
     position: relative;
     height: 100vh;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center; /* 垂直・水平中央 */
     overflow: hidden;
-    padding-top: 60px;
+    padding-top: 60px; /* headerの高さを考慮 */
     box-sizing: border-box;
 }
 
@@ -297,16 +298,13 @@ header ul li a:focus {
 }
 
 .section1 .container {
-    position: absolute;
-    z-index: 2;
+    position: relative;
     text-align: center;
     width: 95%;
     max-width: 1080px;
     margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding-top: 0;
+    z-index: 2; /* bg-flowより前面 */
+
 }
 
 .section1 .filter {
@@ -853,8 +851,8 @@ header ul li a:focus {
         background-repeat: no-repeat;
     }
     .section1 .container {
-        top: 38%;
-        transform: translate(-50%, -50%);
+        margin-top: 60px;
+
     }
     .section1 .heading { font-size: 16px; line-height: 1.1; }
     .section1 h1 { font-size: 24px; line-height: 1.2; }
