@@ -280,17 +280,17 @@ window.addEventListener('scroll', function () {
 /* フェードインアニメーション */
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".fade-in-section");
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
-                obs.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.2
+        rootMargin: "-100px 0px -100px 0px" // 上下左右のマージンを調整
     });
-    sections.forEach(sec => observer.observe(sec));
+
+    sections.forEach((sec) => observer.observe(sec));
 });
 
 /* NEWSの折りたたみ */
