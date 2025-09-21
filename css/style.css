@@ -727,7 +727,7 @@ header ul li a:focus {
         min-height: 225px;
     }
     .section1 .container {
-        top: 50%;
+        top: 42%;
         transform: translate(-50%, -50%);
     }
     .section1 .heading { font-size: 18px; line-height: 1.1; }
