@@ -770,10 +770,7 @@ header ul li a:focus {
         aspect-ratio: 480/225;
         min-height: 225px;
     }
-    .section1 .container {
-        top: 320px;
-        transform: translate(-50%, -50%);
-    }
+
     .section1 .heading { font-size: 18px; line-height: 1.1; }
     .section1 h1 { font-size: 28px; line-height: 1.2; }
     .section1 .text { font-size: 13px; line-height: 1.2; }
@@ -954,6 +951,28 @@ header ul li a:focus {
         width: 20px;
         height: 20px;
     }
+    /*パララックス*/
+    .parallax-section {
+        height: 225px;
+    }
+    .parallax-img {
+        left: 20%;
+        width: 140px;
+        min-width: 100px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    .parallax-img.main {
+        left: 80%;
+        width: 140px;
+    }
+
+    .parallax-text {
+        font-size: 16px;
+        left: 50%;
+        transform: translateX(-50%) translateY(50px);
+    }
+
 }
 
 /* PC (1025px以上) */
