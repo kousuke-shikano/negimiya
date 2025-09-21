@@ -163,6 +163,34 @@ footer {
     transition: transform 0.5s cubic-bezier(.4,0,.2,1);
 }
 
+/* パララックスセクション */
+.parallax-section {
+    position: relative;
+    height: 400px;
+    background-color: var(--section1-bg);
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--section1-bg)); /* 好きな背景色に変更 */
+    z-index: 0;
+}
+
+.parallax-img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%); /* 最初は下に隠す */
+    width: 250px; /* 固定サイズ */
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: transform 0.8s linear;
+}
 /* ヘッダー */
 header {
     font-weight: 700;
@@ -370,7 +398,6 @@ header ul li a:focus {
 
 /* セクション2 */
 .section2 {
-    padding: 45px 0;
     background-color: var(--section2-bg);
 }
 
