@@ -356,28 +356,28 @@
                 mobileNav.classList.remove('active');
             });
         });
-            // ランダム背景画像設定（480x225想定）
-            const images = [
-                "./images/heroback/001.jpg","./images/heroback/002.jpg","./images/heroback/003.jpg",
-                "./images/heroback/004.jpg","./images/heroback/005.jpg","./images/heroback/006.jpg",
-                "./images/heroback/007.jpg","./images/heroback/008.jpg","./images/heroback/009.jpg",
-                "./images/heroback/010.jpg","./images/heroback/011.jpg","./images/heroback/012.jpg",
-                "./images/heroback/013.jpg","./images/heroback/014.jpg","./images/heroback/015.jpg",
-                "./images/heroback/016.jpg","./images/heroback/017.jpg","./images/heroback/018.jpg",
-                "./images/heroback/019.jpg","./images/heroback/020.jpg","./images/heroback/021.jpg",
-                "./images/heroback/022.jpg","./images/heroback/023.jpg","./images/heroback/024.jpg",
-                "./images/heroback/025.jpg","./images/heroback/026.jpg","./images/heroback/027.jpg",
-                "./images/heroback/028.jpg",
-            ];
+// ランダム背景画像設定（480x225想定）
+const images = [
+    "./images/heroback/001.jpg","./images/heroback/002.jpg","./images/heroback/003.jpg",
+    "./images/heroback/004.jpg","./images/heroback/005.jpg","./images/heroback/006.jpg",
+    "./images/heroback/007.jpg","./images/heroback/008.jpg","./images/heroback/009.jpg",
+    "./images/heroback/010.jpg","./images/heroback/011.jpg","./images/heroback/012.jpg",
+    "./images/heroback/013.jpg","./images/heroback/014.jpg","./images/heroback/015.jpg",
+    "./images/heroback/016.jpg","./images/heroback/017.jpg","./images/heroback/018.jpg",
+    "./images/heroback/019.jpg","./images/heroback/020.jpg","./images/heroback/021.jpg",
+    "./images/heroback/022.jpg","./images/heroback/023.jpg","./images/heroback/024.jpg",
+    "./images/heroback/025.jpg","./images/heroback/026.jpg","./images/heroback/027.jpg",
+    "./images/heroback/028.jpg",
+];
 
-            // ランダムに count 枚を選ぶ関数
-            function getRandomImages(sourceArray, count) {
-                const shuffled = [...sourceArray].sort(() => 0.5 - Math.random());
-                return shuffled.slice(0, count);
-            }
+// ランダムに count 枚を選ぶ関数
+function getRandomImages(sourceArray, count) {
+    const shuffled = [...sourceArray].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
 
-            // 流れるサムネ作成
-function createFlowThumbs(containerId, count, repeat = 4) { // repeatを4に増やす
+// 流れるサムネ作成
+function createFlowThumbs(containerId, count, repeat = 4) {
     const container = document.getElementById(containerId);
     const selected = getRandomImages(images, count);
     let loopImages = [];
@@ -394,14 +394,12 @@ function createFlowThumbs(containerId, count, repeat = 4) { // repeatを4に増�
 
 // ページロード時
 window.addEventListener("load", () => {
-    const repeat = 3; // 変更: 3セットでシームレス
-    let count = 5;
-    if (window.innerWidth <= 1024) { // 変更: タブレット以下も調整
-        createFlowThumbs("bg-top", count, repeat);
-        createFlowThumbs("bg-bottom", count, repeat);
-    } else {
-        createFlowThumbs("bg-top", count, repeat);
-        createFlowThumbs("bg-bottom", count, repeat);
+    if (window.innerWidth <= 1024) { // モバイル/タブレット
+        createFlowThumbs("bg-top", 3, 2); // 3枚×2セット
+        createFlowThumbs("bg-bottom", 3, 2);
+    } else { // PC
+        createFlowThumbs("bg-top", 5, 3); // 5枚×3セット（現状維持）
+        createFlowThumbs("bg-bottom", 5, 3);
     }
 });
 

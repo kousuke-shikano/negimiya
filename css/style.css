@@ -630,12 +630,12 @@ header ul li a:focus {
     }
 
     .bg-flow {
-        width: calc(20% * 15);
-        animation-duration: 30s;
+        width: calc(33.33% * 6); /* 3枚×2セット */
+        animation-duration: 24s; /* 統一 */
     }
 
     .thumb {
-        width: 20%;
+        width: 33.33%;
         aspect-ratio: 480/225;
         min-height: 225px;
     }
@@ -764,13 +764,12 @@ header ul li a:focus {
     }
 
     .bg-flow {
-        width: calc(22% * 15);
-        height: auto;
-        animation-duration: 20s;
+        width: calc(33.33% * 6); /* 3枚×2セット */
+        animation-duration: 24s; /* 統一 */
     }
 
     .thumb {
-        width: 22%;
+        width: 33.33%;
         aspect-ratio: 400/225;
         min-height: 225px;
         background-size: contain;
