@@ -152,7 +152,7 @@
                 <h2>NEWS</h2>
                 <hr>
                 <ul class="news-list">
-                                        <li>
+                    <li>
                         <p class="date">2025.9.19</p>
                         <p>・サーバーを移行しました。<br>
                             　おおよそ、月500回まで更新可能になりました。やったぜ。<br>
@@ -183,21 +183,23 @@
                             　（余白を触ってもトップに行かないように判定調整）
                         </p>
                     </li>
-                    <!-- 折りたたみ部分 -->
-                    <div class="news-content">
-                    <li>
-                        <p class="date">2025.09.15</p>
-                        <p> ・Loading画面の実装<br>
-                            ・ヘッダーが味気ないので調整<br>
-                            　（スクロールしたときの視認性調整）<br>
-                            ・併せてスマホにハンバーガーメニューの実装<br>
-                            ・Linksにマシュマロ追加<br>
-                            　(併せて背景色調整)<br>
-                            ・悲鳴はリスナーの栄養追加<br>
-                            ・タブレットサイズ（iPad）でも<br>
-                            　見やすいように調整
-                        </p>
-                    </li>
+                </ul>
+                <!-- 折りたたみ部分をulの外に移動し、新しいulで囲む -->
+                <div class="news-content">
+                    <ul>
+                        <li>
+                            <p class="date">2025.09.15</p>
+                            <p> ・Loading画面の実装<br>
+                                ・ヘッダーが味気ないので調整<br>
+                                　（スクロールしたときの視認性調整）<br>
+                                ・併せてスマホにハンバーガーメニューの実装<br>
+                                ・Linksにマシュマロ追加<br>
+                                　(併せて背景色調整)<br>
+                                ・悲鳴はリスナーの栄養追加<br>
+                                ・タブレットサイズ（iPad）でも<br>
+                                　見やすいように調整
+                            </p>
+                        </li>
                         <li>
                             <p class="date">2025.09.14</p>
                             <p>えっ！ファンサイトの作成を…！できらぁ！</p>
@@ -206,9 +208,8 @@
                             <p class="date">2025.09.13</p>
                             <p>暇だからファンサイト作るわ</p>
                         </li>
-                    </div>
-                </ul>
-
+                    </ul>
+                </div>
                 <button id="toggleNews">もっと見る</button>
             </div>
         </section>
@@ -219,9 +220,9 @@
                 <ul>
                     <li><a class="youtube" href="https://www.youtube.com/@葱野みや" target="_blank" rel="noopener" >YouTubeチャンネル</a></li>
                     <li><a class="X" href="https://x.com/Negi_008" target="_blank" rel="noopener">X（旧Twitter）</a></li>
-                    <li><a class="marshmallow"href="https://marshmallow-qa.com/negi_008" target="_blank" rel="noopener">マシュマロ</a></li>
+                    <li><a class="marshmallow" href="https://marshmallow-qa.com/negi_008" target="_blank" rel="noopener">マシュマロ</a></li>
                     <li><a class="skeb" href="https://skeb.jp/@Negi_008" target="_blank" rel="noopener">skeb.jp</a></li>
-                    <li><a class="booth"href="https://neginomiya.booth.pm" target="_blank" rel="noopener">Booth</a></li>
+                    <li><a class="booth" href="https://neginomiya.booth.pm" target="_blank" rel="noopener">Booth</a></li>
                 </ul>
             </div>
         </section>
@@ -273,17 +274,17 @@
     });
     // NEWSの折りたたみ
         const toggleBtn = document.getElementById('toggleNews');
-        const newscontent = document.querySelectorAll('.news-content');
+        const newscontent = document.querySelector('.news-content');
 
         toggleBtn.addEventListener('click', () => {
-        newscontent.forEach(text => text.classList.toggle('open'));
-    
-        if(toggleBtn.textContent === "もっと見る"){
-            toggleBtn.textContent = "閉じる";
-        } else {
-            toggleBtn.textContent = "もっと見る";
-        }
-    });
+            newscontent.classList.toggle('open');
+        
+            if(toggleBtn.textContent === "もっと見る"){
+                toggleBtn.textContent = "閉じる";
+            } else {
+                toggleBtn.textContent = "もっと見る";
+            }
+        });
 
     // クリックでアイコンが飛び散る（自然な散布）
         const scatterImages = [
