@@ -74,6 +74,7 @@
     <section class="parallax-section">
         <div class="parallax-bg"></div>
         <img src="./images/chibimiya.PNG" class="parallax-img" alt="パララックス画像">
+        <div class="parallax-text">↓--scroll--↓</div>
     </section>
     <section class="section2 fade-in-section" id="section2">
         <div class="container">
@@ -104,6 +105,11 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="parallax-section" id="parallax2">
+        <div class="parallax-bg"></div>
+        <img src="./images/tetomiya.png" class="parallax-img main" alt="第2パララックス画像">
+        <div class="parallax-text">↓--scroll--↓</div>
     </section>
     <section class="section3 fade-in-section" id="section3">
         <div class="container">
@@ -402,40 +408,49 @@ window.addEventListener("load", () => {
 
     /* パララックス効果 */
 (function() {
-    const img = document.querySelector('.parallax-img');
-    const section1 = document.querySelector('.section1');
-    const parallaxSection = document.querySelector('.parallax-section');
-    if (!img || !section1 || !parallaxSection) return;
+    const parallaxSections = document.querySelectorAll('.parallax-section');
+    parallaxSections.forEach((section) => {
+        const img = section.querySelector('.parallax-img');
+        const text = section.querySelector('.parallax-text');
+        const parallaxBg = section.querySelector('.parallax-bg');
+        let currentY_img = 80;
+        let targetY_img = 80;
+        let currentY_text = 10;
+        let targetY_text = 10;
+        let currentY_bg = 0;
+        let targetY_bg = 0;
 
-    let currentY = 80;
-    let targetY = 80;
+        function updateParallax() {
+            // 開始位置: セクションの上端が画面下に入る瞬間
+            const start = section.getBoundingClientRect().top + window.scrollY - window.innerHeight;
+            // 終了位置: 開始位置から0.5画面分だけスクロールした位置（全パララックスで統一）
+            const end = start + window.innerHeight * 0.5;
 
-    function updateParallax() {
-        const section1Bottom = section1.getBoundingClientRect().bottom + window.scrollY;
-        const parallaxTop = parallaxSection.getBoundingClientRect().top + window.scrollY;
-        const imgHeight = img.offsetHeight;
+            const scrollY = window.scrollY;
+            let progress = (scrollY - start) / (end - start);
+            progress = Math.max(0, Math.min(1, progress));
 
-        // 倍速：移動範囲をさらに狭める
-        // 画面に入った瞬間から、section1の底面の「手前」で到達するよう調整
-        const start = parallaxTop - window.innerHeight;
-        // endをsection1Bottom - (window.innerHeight / 2)にして、画面中央で到達
-        const end = section1Bottom - (window.innerHeight / 2);
+            // 画像：下から上へ（80%→0%）
+            targetY_img = 80 * (1 - progress);
 
-        const scrollY = window.scrollY;
-        let progress = (scrollY - start) / (end - start);
-        progress = Math.max(0, Math.min(1, progress));
+            // テキスト：上から下へ（10%→90%）
+            targetY_text = 10 + 80 * progress;
 
-        targetY = 80 * (1 - progress);
+            currentY_img += (targetY_img - currentY_img) * 0.3;
+            currentY_text += (targetY_text - currentY_text) * 0.3;
+            currentY_bg += (targetY_bg - currentY_bg) * 0.1;
 
-        currentY += (targetY - currentY) * 0.5;
-        img.style.transform = `translateX(-50%) translateY(${currentY}%)`;
+            if (img) img.style.transform = `translateX(-50%) translateY(${currentY_img}%)`;
+            if (text) text.style.transform = `translateX(-50%) translateY(${currentY_text}%)`;
+            if (parallaxBg) parallaxBg.style.transform = `translateY(${currentY_bg}px)`;
 
-        requestAnimationFrame(updateParallax);
-    }
+            requestAnimationFrame(updateParallax);
+        }
 
-    window.addEventListener('scroll', updateParallax);
-    window.addEventListener('resize', updateParallax);
-    updateParallax();
+        window.addEventListener('scroll', updateParallax);
+        window.addEventListener('resize', updateParallax);
+        updateParallax();
+    });
 })();
 </script>
 </body>
