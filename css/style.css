@@ -121,7 +121,7 @@ footer {
 }
 
 /* ローディング画面 */
-.nm-loading {
+.loading {
     position: fixed;
     inset: 0;
     background: var(--section1-bg);
@@ -133,25 +133,25 @@ footer {
     z-index: 9999;
 }
 
-.nm-loading.fadeout {
+.loading.fadeout {
     opacity: 0;
     pointer-events: none;
 }
 
-.nm-loading img {
+.loading img {
     width: 80%;
     height: auto;
     object-fit: contain;
 }
 
 @media (min-width: 1025px) {
-    .nm-loading img {
+    .loading img {
         max-width: 70%;
     }
 }
 
 /* 飛び散るアイコン */
-.nm-scatter-fly {
+.scatter-fly {
     position: fixed;
     left: 0;
     top: 0;
@@ -163,7 +163,7 @@ footer {
 }
 
 /* パララックスセクション */
-.nm-parallax {
+.parallax {
     position: relative;
     height: 400px;
     background-color: var(--section2-bg);
@@ -171,7 +171,7 @@ footer {
     margin: 0;
 }
 
-.nm-parallax__bg {
+.parallax__bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -182,7 +182,7 @@ footer {
     transition: transform 0.8s linear;
 }
 
-.nm-parallax__img {
+.parallax__img {
     position: absolute;
     left: 35%;
     width: 250px;
@@ -194,12 +194,12 @@ footer {
     z-index: 3;
 }
 
-.nm-parallax__img--main {
+.parallax__img--main {
     left: 65%;
     transform: translateX(-50%) translateY(50%);
 }
 
-.nm-parallax__text {
+.parallax__text {
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(40%);
@@ -225,14 +225,14 @@ header.scrolled {
     background-color: rgba(26, 42, 42, 0.95);
 }
 
-header .nm-container {
+header .container {
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 16px;
 }
 
-header .nm-row {
+header .row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -240,7 +240,7 @@ header .nm-row {
     flex-wrap: wrap;
 }
 
-.nm-header__logo {
+.header__logo {
     font-size: 24px;
     text-decoration: none;
     color: var(--accent-color);
@@ -267,24 +267,24 @@ header ul li a:focus {
     border-radius: 4px;
 }
 
-.nm-nav--pc {
+.nav--pc {
     display: block;
     order: 3;
 }
 
-.nm-hamburger {
+.hamburger {
     order: 4;
     display: none;
 }
 
-.nm-theme-selector {
+.theme-selector {
     display: flex;
     gap: 10px;
     order: 2;
     margin-left: 16px;
 }
 
-.nm-theme-selector__btn {
+.theme-selector__btn {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -293,17 +293,17 @@ header ul li a:focus {
     transition: transform 0.2s ease;
 }
 
-.nm-theme-selector__btn:hover {
+.theme-selector__btn:hover {
     transform: scale(1.2);
 }
 
-.nm-theme-selector__btn:focus {
+.theme-selector__btn:focus {
     outline: 2px solid var(--accent-alt);
     outline-offset: 2px;
 }
 
 /* セクション1 */
-.nm-hero {
+.hero {
     position: relative;
     height: 100vh;
     display: flex;
@@ -314,7 +314,7 @@ header ul li a:focus {
     box-sizing: border-box;
 }
 
-.nm-hero__bg-flow {
+.hero__bg-flow {
     display: flex;
     position: absolute;
     left: 0;
@@ -329,14 +329,14 @@ header ul li a:focus {
 #bg-top { top: 60px; }
 #bg-bottom { bottom: 0; }
 
-.nm-hero__thumb {
+.hero__thumb {
     width: 20%;
     height: 225px;
     background-size: cover;
     background-position: center;
 }
 
-#bg-bottom .nm-hero__thumb {
+#bg-bottom .hero__thumb {
     animation-direction: reverse;
 }
 
@@ -345,7 +345,7 @@ header ul li a:focus {
     to { transform: translateX(-33.33%); }
 }
 
-.nm-hero .nm-container {
+.hero .container {
     position: relative;
     text-align: center;
     width: 95%;
@@ -354,7 +354,7 @@ header ul li a:focus {
     z-index: 2;
 }
 
-.nm-hero .nm-hero__filter {
+.hero .hero__filter {
     width: 100%;
     height: 100vh;
     background-color: black;
@@ -365,7 +365,7 @@ header ul li a:focus {
     z-index: 1;
 }
 
-.nm-hero__heading {
+.hero__heading {
     font-size: 18px;
     font-weight: 700;
     margin: 5px 0;
@@ -374,7 +374,7 @@ header ul li a:focus {
     line-height: 1.1;
 }
 
-.nm-hero h1 {
+.hero h1 {
     font-size: 32px;
     font-weight: 700;
     margin: 8px 0;
@@ -382,7 +382,7 @@ header ul li a:focus {
     line-height: 1.2;
 }
 
-.nm-hero .nm-text {
+.hero .text {
     font-size: 14px;
     margin: 5px 0 10px;
     color: var(--text-color);
@@ -390,7 +390,7 @@ header ul li a:focus {
     white-space: nowrap;
 }
 
-.nm-hero .nm-link--youtube {
+.hero .link--youtube {
     font-size: 14px;
     font-weight: 700;
     padding: 8px 24px;
@@ -404,29 +404,29 @@ header ul li a:focus {
     margin-top: 8px;
 }
 
-.nm-hero .nm-link--youtube:hover {
+.hero .link--youtube:hover {
     background-color: var(--youtube-hover);
     text-decoration: none;
     color: var(--footer-text);
 }
 
-.nm-hero .nm-link--youtube:focus {
+.hero .link--youtube:focus {
     outline: 2px solid var(--accent-alt);
     outline-offset: 2px;
 }
 
 /* セクション2 */
-.nm-activities {
+.activities {
     background-color: var(--section2-bg);
 }
 
-.nm-activities .nm-container {
+.activities .container {
     max-width: 1080px;
     width: 90%;
     margin: 0 auto;
 }
 
-.nm-activities .nm-row {
+.activities .row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -434,7 +434,7 @@ header ul li a:focus {
     position: relative;
 }
 
-.nm-activities .nm-column {
+.activities .column {
     background-color: var(--news-bg);
     color: var(--text-color);
     width: 32%;
@@ -443,44 +443,44 @@ header ul li a:focus {
     position: relative;
 }
 
-.nm-activities .nm-row img {
+.activities .row img {
     width: 100px;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 16px;
 }
 
-.nm-activities h2 {
+.activities h2 {
     font-size: 20px;
     font-weight: 700;
     color: var(--accent-alt);
     margin-bottom: 16px;
 }
 
-.nm-activities hr {
+.activities hr {
     border: solid 2px var(--accent-alt);
     margin-bottom: 16px;
     width: 48px;
 }
 
-.nm-activities .nm-text {
+.activities .text {
     font-size: 15px;
     line-height: 1.8;
 }
 
 /* セクション3 */
-.nm-videos {
+.videos {
     background-color: var(--section3-bg);
     padding: 45px 0 40px;
 }
 
-.nm-videos .nm-container {
+.videos .container {
     max-width: 1080px;
     width: 90%;
     margin: 0 auto;
 }
 
-.nm-videos .nm-row {
+.videos .row {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -488,11 +488,11 @@ header ul li a:focus {
     margin-bottom: 60px;
 }
 
-.nm-videos .nm-column {
+.videos .column {
     width: 46%;
 }
 
-.nm-videos h2 {
+.videos h2 {
     font-size: 28px;
     font-weight: 700;
     color: var(--accent-alt);
@@ -500,45 +500,45 @@ header ul li a:focus {
     line-height: 1.3;
 }
 
-.nm-videos hr {
+.videos hr {
     border: solid 2px var(--accent-color);
     margin-bottom: 20px;
     width: 60px;
 }
 
-.nm-videos .nm-text {
+.videos .text {
     font-size: 16px;
     color: var(--text-color);
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
-.nm-videos iframe {
+.videos iframe {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
 }
 
 @media (min-width: 1025px) {
-    .nm-videos .nm-column iframe {
+    .videos .column iframe {
         max-width: 600px;
         width: 100%;
     }
 }
 
 /* セクション4 */
-.nm-news {
+.news {
     background-color: var(--section4-bg);
     padding: 50px 0;
 }
 
-.nm-news .nm-container {
+.news .container {
     max-width: 1080px;
     width: 90%;
     margin: 0 auto;
 }
 
-.nm-news h2 {
+.news h2 {
     font-size: 28px;
     font-weight: 700;
     color: var(--accent-alt);
@@ -546,19 +546,19 @@ header ul li a:focus {
     margin-bottom: 20px;
 }
 
-.nm-news hr {
+.news hr {
     border: solid 2px var(--accent-alt);
     margin: 0 auto 40px;
     width: 60px;
 }
 
-.nm-news ul {
+.news ul {
     list-style: none;
     max-width: 700px;
     margin: 0 auto;
 }
 
-.nm-news li {
+.news li {
     border: solid 1px var(--accent-color);
     background-color: var(--news-bg);
     color: var(--text-color);
@@ -567,25 +567,25 @@ header ul li a:focus {
     padding: 16px 24px;
 }
 
-.nm-news__date {
+.news__date {
     color: var(--accent-alt);
     font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 6px;
 }
 
-.nm-news__content {
+.news__content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
 }
 
-.nm-news__content.open {
+.news__content.open {
     max-height: 1000px;
 }
 
 @media (min-width: 1025px) {
-    .nm-news__content.open {
+    .news__content.open {
         max-height: 1200px;
     }
 }
@@ -610,18 +610,18 @@ header ul li a:focus {
 }
 
 /* セクション5 */
-.nm-links {
+.links {
     background-color: var(--section5-bg);
     padding: 50px 0;
 }
 
-.nm-links .nm-container {
+.links .container {
     max-width: 1080px;
     width: 90%;
     margin: 0 auto;
 }
 
-.nm-links h2 {
+.links h2 {
     font-size: 28px;
     font-weight: 700;
     text-align: center;
@@ -629,13 +629,13 @@ header ul li a:focus {
     margin-bottom: 20px;
 }
 
-.nm-links hr {
+.links hr {
     border: solid 2px var(--accent-alt);
     width: 60px;
     margin: 0 auto 40px;
 }
 
-.nm-links ul {
+.links ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -645,7 +645,7 @@ header ul li a:focus {
     justify-content: center;
 }
 
-.nm-links a {
+.links a {
     display: inline-block;
     padding: 12px 24px;
     font-size: 16px;
@@ -656,63 +656,63 @@ header ul li a:focus {
     color: var(--footer-text);
 }
 
-.nm-links .nm-link--youtube { background-color: var(--youtube-bg); }
-.nm-links .nm-link--x { background-color: #000000; }
-.nm-links .nm-link--marshmallow { background-color: var(--news-bg); color: var(--accent-color); }
-.nm-links .nm-link--skeb { background-color: var(--accent-color); }
-.nm-links .nm-link--booth { background-color: var(--section4-bg); color: #006400; }
+.links .link--youtube { background-color: var(--youtube-bg); }
+.links .link--x { background-color: #000000; }
+.links .link--marshmallow { background-color: var(--news-bg); color: var(--accent-color); }
+.links .link--skeb { background-color: var(--accent-color); }
+.links .link--booth { background-color: var(--section4-bg); color: #006400; }
 
-.nm-links a:hover {
+.links a:hover {
     transform: scale(1.05);
     opacity: 0.9;
     background-color: var(--link-hover-bg);
     color: var(--link-hover-text);
 }
 
-.nm-links .nm-link--marshmallow:hover {
+.links .link--marshmallow:hover {
     background-color: var(--link-hover-bg);
     color: var(--link-hover-text);
 }
 
-.nm-links .nm-link--booth:hover {
+.links .link--booth:hover {
     background-color: var(--link-hover-bg);
     color: var(--link-hover-text);
 }
 
 /* フェードインアニメーション */
-.nm-fade-in {
+.fade-in {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 2s ease, transform 2s ease;
 }
 
-.nm-fade-in.visible {
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* タブレット (601px〜1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
-    .nm-nav--pc { display: none; }
-    .nm-hamburger { display: flex; }
-    .nm-nav--mobile { display: none; }
-    .nm-nav--mobile.active { display: block; }
-    header .nm-row {
+    .nav--pc { display: none; }
+    .hamburger { display: flex; }
+    .nav--mobile { display: none; }
+    .nav--mobile.active { display: block; }
+    header .row {
         padding: 10px;
         justify-content: space-between;
         align-items: center;
     }
-    .nm-header__logo {
+    .header__logo {
         font-size: 18px;
         order: 1;
     }
-    .nm-theme-selector {
+    .theme-selector {
         order: 2;
         margin-left: 16px;
         margin-right: auto;
         gap: 8px;
     }
-    .nm-hamburger {
+    .hamburger {
         flex-direction: column;
         gap: 4px;
         cursor: pointer;
@@ -720,23 +720,23 @@ header ul li a:focus {
         transition: 0.3s ease;
         order: 3;
     }
-    .nm-hamburger span {
+    .hamburger span {
         width: 28px;
         height: 3px;
         background-color: var(--accent-color);
         border-radius: 2px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    .nm-hamburger.active span:nth-child(1) {
+    .hamburger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
-    .nm-hamburger.active span:nth-child(2) {
+    .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    .nm-hamburger.active span:nth-child(3) {
+    .hamburger.active span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
-    .nm-nav--mobile {
+    .nav--mobile {
         position: absolute;
         top: 60px;
         right: 0;
@@ -744,72 +744,72 @@ header ul li a:focus {
         background-color: rgba(26, 42, 42, 0.95);
         z-index: 2;
     }
-    .nm-nav--mobile ul {
+    .nav--mobile ul {
         padding: 20px;
     }
-    .nm-nav--mobile li {
+    .nav--mobile li {
         margin-bottom: 10px;
     }
-    .nm-nav--mobile a {
+    .nav--mobile a {
         color: var(--footer-text);
         text-decoration: none;
         font-weight: bold;
         font-size: 16px;
     }
-    .nm-scatter-fly {
+    .scatter-fly {
         width: 64px;
         height: auto;
     }
-    .nm-hero__bg-flow {
+    .hero__bg-flow {
         width: calc(33.33% * 6);
         animation-duration: 24s;
     }
-    .nm-hero__thumb {
+    .hero__thumb {
         width: 33.33%;
         aspect-ratio: 480/225;
         min-height: 225px;
     }
-    .nm-hero__heading { font-size: 18px; line-height: 1.1; }
-    .nm-hero h1 { font-size: 28px; line-height: 1.2; }
-    .nm-hero .nm-text { font-size: 13px; line-height: 1.2; }
-    .nm-hero .nm-link--youtube { font-size: 13px; padding: 7px 20px; }
-    .nm-activities .nm-row,
-    .nm-videos .nm-row {
+    .hero__heading { font-size: 18px; line-height: 1.1; }
+    .hero h1 { font-size: 28px; line-height: 1.2; }
+    .hero .text { font-size: 13px; line-height: 1.2; }
+    .hero .link--youtube { font-size: 13px; padding: 7px 20px; }
+    .activities .row,
+    .videos .row {
         flex-direction: column;
     }
-    .nm-activities .nm-column,
-    .nm-videos .nm-column {
+    .activities .column,
+    .videos .column {
         width: 100%;
         margin-bottom: 30px;
     }
-    .nm-activities h2 {
+    .activities h2 {
         font-size: 18px;
     }
-    .nm-activities .nm-text {
+    .activities .text {
         font-size: 14px;
         line-height: 1.8;
     }
-    .nm-videos h2 {
+    .videos h2 {
         font-size: 24px;
     }
-    .nm-videos .nm-text {
+    .videos .text {
         font-size: 15px;
         line-height: 1.8;
     }
-    .nm-news h2 {
+    .news h2 {
         font-size: 24px;
     }
-    .nm-links ul {
+    .links ul {
         flex-direction: column;
         align-items: center;
     }
-    .nm-links a {
+    .links a {
         width: 100%;
         max-width: 300px;
         text-align: center;
         font-size: 14px;
     }
-    .nm-theme-selector__btn {
+    .theme-selector__btn {
         width: 20px;
         height: 20px;
     }
@@ -817,21 +817,21 @@ header ul li a:focus {
 
 /* モバイル (600px以下) */
 @media (max-width: 600px) {
-    .nm-nav--pc { display: none; }
-    .nm-hamburger { display: flex; }
-    .nm-nav--mobile { display: none; }
-    .nm-nav--mobile.active { display: block; }
-    .nm-header__logo {
+    .nav--pc { display: none; }
+    .hamburger { display: flex; }
+    .nav--mobile { display: none; }
+    .nav--mobile.active { display: block; }
+    .header__logo {
         font-size: 16px;
         order: 1;
     }
-    .nm-theme-selector {
+    .theme-selector {
         order: 2;
         margin-left: 16px;
         margin-right: auto;
         gap: 8px;
     }
-    .nm-hamburger {
+    .hamburger {
         flex-direction: column;
         gap: 4px;
         cursor: pointer;
@@ -839,23 +839,23 @@ header ul li a:focus {
         transition: 0.3s ease;
         order: 3;
     }
-    .nm-hamburger span {
+    .hamburger span {
         width: 28px;
         height: 3px;
         background-color: var(--accent-color);
         border-radius: 2px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    .nm-hamburger.active span:nth-child(1) {
+    .hamburger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
-    .nm-hamburger.active span:nth-child(2) {
+    .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-    .nm-hamburger.active span:nth-child(3) {
+    .hamburger.active span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
-    .nm-nav--mobile {
+    .nav--mobile {
         position: absolute;
         top: 60px;
         right: 0;
@@ -863,27 +863,27 @@ header ul li a:focus {
         background-color: rgba(26, 42, 42, 0.95);
         z-index: 2;
     }
-    .nm-nav--mobile ul {
+    .nav--mobile ul {
         padding: 20px;
     }
-    .nm-nav--mobile li {
+    .nav--mobile li {
         margin-bottom: 10px;
     }
-    .nm-nav--mobile a {
+    .nav--mobile a {
         color: var(--footer-text);
         text-decoration: none;
         font-weight: bold;
         font-size: 14px;
     }
-    .nm-scatter-fly {
+    .scatter-fly {
         width: 64px;
         height: auto;
     }
-    .nm-hero__bg-flow {
+    .hero__bg-flow {
         width: calc(33.33% * 6);
         animation-duration: 24s;
     }
-    .nm-hero__thumb {
+    .hero__thumb {
         width: 33.33%;
         aspect-ratio: 400/225;
         min-height: 225px;
@@ -891,79 +891,79 @@ header ul li a:focus {
         background-position: center;
         background-repeat: no-repeat;
     }
-    .nm-hero__heading { font-size: 16px; line-height: 1.1; }
-    .nm-hero h1 { font-size: 24px; line-height: 1.2; }
-    .nm-hero .nm-text { font-size: 12px; line-height: 1.1; }
-    .nm-hero .nm-link--youtube { font-size: 12px; padding: 6px 18px; }
-    .nm-activities .nm-row,
-    .nm-videos .nm-row {
+    .hero__heading { font-size: 16px; line-height: 1.1; }
+    .hero h1 { font-size: 24px; line-height: 1.2; }
+    .hero .text { font-size: 12px; line-height: 1.1; }
+    .hero .link--youtube { font-size: 12px; padding: 6px 18px; }
+    .activities .row,
+    .videos .row {
         flex-direction: column;
     }
-    .nm-activities .nm-column,
-    .nm-videos .nm-column {
+    .activities .column,
+    .videos .column {
         width: 100%;
         margin-bottom: 30px;
     }
-    .nm-activities .nm-column {
+    .activities .column {
         padding: 15px;
     }
-    .nm-activities .nm-row img {
+    .activities .row img {
         width: 80px;
     }
-    .nm-activities h2 {
+    .activities h2 {
         font-size: 16px;
     }
-    .nm-activities .nm-text {
+    .activities .text {
         font-size: 13px;
         line-height: 1.8;
     }
-    .nm-videos .nm-column {
+    .videos .column {
         margin-bottom: 40px;
     }
-    .nm-videos h2 {
+    .videos h2 {
         font-size: 22px;
     }
-    .nm-videos .nm-text {
+    .videos .text {
         font-size: 13px;
         line-height: 1.8;
     }
-    .nm-news h2 {
+    .news h2 {
         font-size: 22px;
     }
-    .nm-news li {
+    .news li {
         font-size: 13px;
         padding: 12px 16px;
     }
-    .nm-news__date {
+    .news__date {
         font-size: 11px;
     }
-    .nm-links h2 {
+    .links h2 {
         font-size: 22px;
     }
-    .nm-links a {
+    .links a {
         font-size: 13px;
         padding: 10px 20px;
     }
-    .nm-theme-selector__btn {
+    .theme-selector__btn {
         width: 20px;
         height: 20px;
     }
     /*パララックス*/
-    .nm-parallax {
+    .parallax {
         height: 225px;
     }
-    .nm-parallax__img {
+    .parallax__img {
         left: 25%;
         width: 140px;
         min-width: 100px;
         padding-top: 4px;
         padding-bottom: 4px;
     }
-    .nm-parallax__img--main {
+    .parallax__img--main {
         left: 75%;
         width: 140px;
     }
-    .nm-parallax__text {
+    .parallax__text {
         font-size: 16px;
         left: 50%;
         transform: translateX(-50%) translateY(50px);
@@ -972,5 +972,5 @@ header ul li a:focus {
 
 /* PC (1025px以上) */
 @media (min-width: 1025px) {
-    .nm-nav--mobile { display: none !important; }
+    .nav--mobile { display: none !important; }
 }
