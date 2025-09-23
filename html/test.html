@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalorieMate to Programmer | 大塚製薬</title>
+    <meta name="description" content="カロリーメイト リキッドでプログラマーや夢中になる人をサポート！5大栄養素をバランスよく摂取。">
+    <meta name="keywords" content="カロリーメイト, プログラマー, 栄養補助, リキッド, Matz, Ruby">
+    <meta property="og:title" content="CalorieMate to Programmer">
+    <meta property="og:description" content="カロリーメイト リキッドで、プログラミングや仕事に打ち込む人を応援！">
+    <meta property="og:image" content="https://www.otsuka.co.jp/cmt/to_programmer/images/og-image.jpg">
+    <meta property="og:url" content="https://www.otsuka.co.jp/cmt/to_programmer/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../css/teststyle.css">
+</head>
+<body>
+    <div class="loading" id="loading">
+        <img src="images/nowloading.jpg" alt="ローディング">
+    </div>
+    <header>
+        <div class="container">
+            <a href="#" class="header__logo">CalorieMate to Programmer</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#section1">メッセージ</a></li>
+                    <li><a href="#section2">製品紹介</a></li>
+                    <li><a href="#section3">キャンペーン</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <nav class="nav--mobile" id="mobileNav">
+                <ul>
+                    <li><a href="#section1">メッセージ</a></li>
+                    <li><a href="#section2">製品紹介</a></li>
+                    <li><a href="#section3">キャンペーン</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="section1">
+            <div class="parallax__bg" data-speed="0.2"></div>
+            <div class="parallax__img" style="background-image: url('images/caloriemate-can.png');" data-speed="0.4"></div>
+            <div class="container">
+                <h1 class="scramble-text">コードを書き続けるあなたに</h1>
+                <p class="scramble-text">食べることも忘れて熱中するプログラマーへ。<br>カロリーメイト リキッドで5大栄養素を素早く。</p>
+                <a href="#section2" class="btn">製品をチェック</a>
+            </div>
+        </section>
+        <section class="message" id="section2">
+            <div class="parallax__bg" data-speed="0.3"></div>
+            <div class="container">
+                <h2 class="scramble-text">Matzからのメッセージ</h2>
+                <p class="scramble-text">Yukihiro Matsumoto（Matz）、Rubyの創始者。<br>「プログラミングは情熱。カロリーメイト リキッドは、その情熱を支えるバランス栄養を提供します。」</p>
+                <p class="scramble-text">世界的プログラマーから学ぶ、<br>パフォーマンス発揮の秘訣。</p>
+            </div>
+        </section>
+        <section class="product" id="section3">
+            <div class="parallax__bg" data-speed="0.2"></div>
+            <div class="parallax__img" style="background-image: url('images/nutrition-chart.png');" data-speed="0.5"></div>
+            <div class="container">
+                <h2 class="scramble-text">カロリーメイト リキッド</h2>
+                <p class="scramble-text">5大栄養素をバランスよく含む、飲む栄養食。<br>タンパク質10g、11種のビタミン、5種のミネラル。<br>1缶200kcalで計算しやすく、爽やかなフレーバー。</p>
+                <ul class="nutrition-facts scramble-text">
+                    <li>エネルギー: 200kcal</li>
+                    <li>タンパク質: 10g</li>
+                    <li>脂質: 4.4g</li>
+                    <li>炭水化物: 30.6g</li>
+                    <li>ビタミンA: 385μg</li>
+                    <li>カルシウム: 70mg</li>
+                </ul>
+                <a href="https://www.otsuka.co.jp/cmt/" class="btn" target="_blank" rel="noopener">詳細はこちら</a>
+            </div>
+        </section>
+        <section class="campaign">
+            <div class="parallax__bg" data-speed="0.3"></div>
+            <div class="container">
+                <h2 class="scramble-text">キャンペーン</h2>
+                <p class="scramble-text">＃うちこむ人にバランス栄養 プレゼントキャンペーン<br>8/3 10:00 〜 8/16 23:59</p>
+                <p class="scramble-text">A賞（100名）：オリジナルモバイルバッテリー＋リキッド18本<br>B賞（50名）：オリジナルTシャツ＋リキッド18本</p>
+                <a href="https://twitter.com/CalorieMate_jp" class="btn" target="_blank" rel="noopener">Twitterで応募</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 大塚製薬</p>
+            <p><a href="https://www.otsuka.co.jp/cmt/" target="_blank" rel="noopener">CalorieMate Brand Site</a></p>
+        </div>
+    </footer>
+    <script>
+        // ローディングアニメーション
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loading = document.getElementById('loading');
+                loading.classList.add('fadeout');
+                setTimeout(() => loading.style.display = 'none', 2000);
+            }, 1800);
+        });
+
+        // ハンバーガーメニュー
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // パララックス効果
+        const parallaxElements = document.querySelectorAll('[data-speed]');
+        window.addEventListener('scroll', () => {
+            parallaxElements.forEach(el => {
+                const speed = parseFloat(el.getAttribute('data-speed'));
+                const yPos = window.scrollY * speed;
+                el.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // スクランブルテキストアニメーション
+        document.addEventListener('DOMContentLoaded', () => {
+            const targets = document.querySelectorAll('.scramble-text');
+            const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*+-=?!@';
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.dataset.scrambled) {
+                        entry.target.dataset.scrambled = 'true';
+                        const lines = entry.target.innerHTML.split('<br>').map(line => line.trim());
+                        entry.target.innerHTML = '';
+                        lines.forEach((line, lineIndex) => {
+                            const lineSpan = document.createElement('span');
+                            lineSpan.className = 'scramble-line';
+                            lineSpan.style.display = 'block';
+                            entry.target.appendChild(lineSpan);
+                            const chars = line.split('');
+                            chars.forEach((char, charIndex) => {
+                                const span = document.createElement('span');
+                                span.textContent = char === ' ' ? '\u00A0' : randomChars[Math.floor(Math.random() * randomChars.length)];
+                                lineSpan.appendChild(span);
+                                let iteration = 0;
+                                const maxIterations = 50;
+                                const interval = setInterval(() => {
+                                    if (iteration >= maxIterations || char === ' ') {
+                                        span.textContent = char === ' ' ? '\u00A0' : char;
+                                        span.classList.add('revealed');
+                                        clearInterval(interval);
+                                        return;
+                                    }
+                                    span.textContent = randomChars[Math.floor(Math.random() * randomChars.length)];
+                                    iteration++;
+                                    if (Math.random() < iteration / maxIterations) {
+                                        span.textContent = char;
+                                        span.classList.add('revealed');
+                                        clearInterval(interval);
+                                    }
+                                }, 10 + (lineIndex * chars.length + charIndex) * 20);
+                            });
+                            if (lineIndex < lines.length - 1) {
+                                entry.target.appendChild(document.createElement('br'));
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '0px 0px -10% 0px', threshold: 0.3 });
+            targets.forEach(target => observer.observe(target));
+        });
+    </script>
+</body>
+</html>
