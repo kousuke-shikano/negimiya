@@ -987,14 +987,40 @@ header ul li a:focus {
 .scramble-text span {
     display: inline-block;
     opacity: 1;
-    color: var(--accent-color); /* 初期：水色 (#00CED1) */
-    transition: color 0.3s ease; /* 色変化をスムーズに */
+    color: var(--accent-color); /* 水色 (#00CED1) */
+    background-color: rgba(255, 249, 177, 0.5); /* 変化中：薄い黄色ハイライト */
+    box-shadow: 0 0 8px rgba(255, 249, 177, 0.8); /* グロー効果 */
+    padding: 2px 4px; /* ハイライトの領域を少し広げる */
+    border-radius: 3px; /* 角を丸く */
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* スムーズな変化 */
 }
 
 .scramble-text span.revealed {
-    color: var(--accent-alt); /* 終了：緑 (#00CD66) */
+    color: var(--accent-alt); /* 緑 (#00CD66) */
+    background-color: transparent; /* ハイライトオフ */
+    box-shadow: none; /* グローオフ */
 }
 
+/* テーマごとのハイライト色（オプション） */
+[data-theme="dark"] .scramble-text span {
+    background-color: rgba(29, 77, 77, 0.5); /* ダークテーマ：濃いシアン */
+    box-shadow: 0 0 8px rgba(29, 77, 77, 0.8);
+}
+
+[data-theme="vivid"] .scramble-text span {
+    background-color: rgba(152, 251, 152, 0.5); /* ビビッド：薄い緑 */
+    box-shadow: 0 0 8px rgba(152, 251, 152, 0.8);
+}
+
+[data-theme="pastel"] .scramble-text span {
+    background-color: rgba(255, 182, 193, 0.5); /* パステル：薄いピンク */
+    box-shadow: 0 0 8px rgba(255, 182, 193, 0.8);
+}
+
+[data-theme="mono"] .scramble-text span {
+    background-color: rgba(192, 192, 192, 0.5); /* モノクロ：薄いグレー */
+    box-shadow: 0 0 8px rgba(192, 192, 192, 0.8);
+}
 /* activitiesのh2スタイル（競合防止） */
 .activities h2 {
     font-size: 20px;
