@@ -118,6 +118,7 @@ footer {
     padding: 40px 0;
     text-align: center;
     color: var(--footer-text);
+    z-index: 4;
 }
 
 /* ローディング画面 */
@@ -614,12 +615,17 @@ header ul li a:focus {
 .links {
     background-color: var(--section5-bg);
     padding: 50px 0;
+    position: relative;
+    z-index: 5;
+    min-height: 200px;
 }
 
 .links .container {
     max-width: 1080px;
     width: 90%;
     margin: 0 auto;
+    position: relative;
+    z-index: 6;
 }
 
 .links h2 {
@@ -628,8 +634,8 @@ header ul li a:focus {
     text-align: center;
     color: var(--accent-alt);
     margin-bottom: 20px;
-    letter-spacing: 1px; /* 間隔を広げておしゃれに */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 軽い影で立体感 */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .links hr {
@@ -646,10 +652,11 @@ header ul li a:focus {
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
+    min-height: 150px;
 }
 
 .links a {
-    display: inline-block;
+    display: block;
     padding: 12px 24px;
     font-size: 16px;
     font-weight: 600;
@@ -657,10 +664,16 @@ header ul li a:focus {
     border-radius: 6px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     color: var(--footer-text);
-    background-color: var(--accent-color); /* 透過防止: 固い背景をデフォルトで設定 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* おしゃれな軽い影 */
-    opacity: 1; /* 透過を完全に防ぐ */
-    backdrop-filter: none; /* 不要なフィルターをオフ (透過原因の1つ) */
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    visibility: visible;
+    backdrop-filter: none;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 7;
 }
 
 .links .link--youtube { background-color: var(--youtube-bg); }
@@ -673,8 +686,8 @@ header ul li a:focus {
     transform: scale(1.05);
     background-color: var(--link-hover-bg);
     color: var(--link-hover-text);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* hover時: 影を強くしておしゃれに */
-    opacity: 1; /* hover時も不透明を維持 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 1;
 }
 
 .links .link--marshmallow:hover {
@@ -686,6 +699,7 @@ header ul li a:focus {
     background-color: var(--link-hover-bg);
     color: var(--link-hover-text);
 }
+
 /* フェードインアニメーション */
 .fade-in {
     opacity: 0;
@@ -696,6 +710,19 @@ header ul li a:focus {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* モバイル (600px以下) でのフェードイン調整 */
+@media (max-width: 600px) {
+    .fade-in {
+        opacity: 1; /* モバイルでは初期表示を強制 */
+        transform: translateY(0); /* 初期位置を調整 */
+        transition: none; /* アニメーションを無効化 */
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* タブレット (601px〜1024px) */
@@ -809,12 +836,18 @@ header ul li a:focus {
     .links ul {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
+        padding: 0 10px;
     }
     .links a {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
         font-size: 14px;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 250px;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 auto;
     }
     .theme-selector__btn {
         width: 20px;
@@ -947,15 +980,27 @@ header ul li a:focus {
     .links h2 {
         font-size: 22px;
     }
+    .links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
     .links a {
-        font-size: 13px;
+        font-size: 14px;
         padding: 10px 20px;
+        width: 100%;
+        max-width: 250px;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 auto;
     }
     .theme-selector__btn {
         width: 20px;
         height: 20px;
     }
-    /*パララックス*/
+    /* パララックス */
     .parallax {
         height: 225px;
     }
@@ -993,60 +1038,50 @@ header ul li a:focus {
 .scramble-text span {
     display: inline-block;
     opacity: 1;
-    color: var(--accent-color); /* 水色 (#00CED1) */
-    background-color: rgba(255, 249, 177, 0.5); /* 変化中：薄い黄色ハイライト */
-    box-shadow: 0 0 8px rgba(255, 249, 177, 0.8); /* グロー効果 */
-    padding: 2px 4px; /* ハイライトの領域を少し広げる */
-    border-radius: 3px; /* 角を丸く */
-    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* スムーズな変化 */
+    color: var(--accent-color);
+    background-color: rgba(255, 249, 177, 0.5);
+    box-shadow: 0 0 8px rgba(255, 249, 177, 0.8);
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scramble-text span.revealed {
-    color: var(--accent-alt); /* 緑 (#00CD66) */
-    background-color: transparent; /* ハイライトオフ */
-    box-shadow: none; /* グローオフ */
+    color: var(--accent-alt);
+    background-color: transparent;
+    box-shadow: none;
 }
 
-/* テーマごとのハイライト色（オプション） */
+/* テーマごとのハイライト色 */
 [data-theme="dark"] .scramble-text span {
-    background-color: rgba(29, 77, 77, 0.5); /* ダークテーマ：濃いシアン */
+    background-color: rgba(29, 77, 77, 0.5);
     box-shadow: 0 0 8px rgba(29, 77, 77, 0.8);
 }
 
 [data-theme="vivid"] .scramble-text span {
-    background-color: rgba(152, 251, 152, 0.5); /* ビビッド：薄い緑 */
+    background-color: rgba(152, 251, 152, 0.5);
     box-shadow: 0 0 8px rgba(152, 251, 152, 0.8);
 }
 
 [data-theme="pastel"] .scramble-text span {
-    background-color: rgba(255, 182, 193, 0.5); /* パステル：薄いピンク */
+    background-color: rgba(255, 182, 193, 0.5);
     box-shadow: 0 0 8px rgba(255, 182, 193, 0.8);
 }
 
 [data-theme="mono"] .scramble-text span {
-    background-color: rgba(192, 192, 192, 0.5); /* モノクロ：薄いグレー */
+    background-color: rgba(192, 192, 192, 0.5);
     box-shadow: 0 0 8px rgba(192, 192, 192, 0.8);
 }
+
 /* activitiesのh2スタイル（競合防止） */
 .activities h2 {
     font-size: 20px;
     font-weight: 700;
-    color: var(--accent-alt); /* デフォルト：緑 */
+    color: var(--accent-alt);
     margin-bottom: 16px;
     text-align: left;
 }
 
-@media (max-width: 600px) {
-    .hero__title {
-        font-size: 24px;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-    .hero__title {
-        font-size: 28px;
-    }
-}
 /* PC (1025px以上) */
 @media (min-width: 1025px) {
     .nav--mobile { display: none !important; }
