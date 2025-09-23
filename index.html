@@ -310,7 +310,7 @@ window.addEventListener('scroll', function () {
                                     lineSpan.appendChild(span);
                                     
                                     let iteration = 0;
-                                    const maxIterations = 10;
+                                    const maxIterations = 50;/*点滅回数*/
                                     const interval = setInterval(() => {
                                         if (iteration >= maxIterations || char === ' ' || char === '\n') {
                                             span.textContent = char === ' ' ? '\u00A0' : char;
@@ -327,7 +327,7 @@ window.addEventListener('scroll', function () {
                                             span.classList.add('revealed');
                                             clearInterval(interval);
                                         }
-                                    }, 60 + (lineIndex * chars.length + charIndex) * 25);
+                                    }, 10 + (lineIndex * chars.length + charIndex) * 20); /*インターバル(末尾)ms＋遅延(top)ms/文字*/
                                 });
                                 
                                 if (lineIndex < lines.length - 1) {
