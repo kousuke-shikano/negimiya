@@ -650,33 +650,32 @@ header ul li a:focus {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* 間隔を広げて整頓 */
+    gap: 20px;
     justify-content: center;
     min-height: 150px;
 }
 
 .links a {
-    display: block;
-    padding: 12px 24px;
+    display: inline-flex; /* 内容に合わせてサイズ調整 */
+    padding: 10px 20px; /* 上下左右の余白を調整 */
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 8px; /* 角を少し丸くして綺麗に */
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     color: var(--footer-text);
     background-color: var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 影を少し強化 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 1;
     visibility: visible;
     backdrop-filter: none;
-    width: 180px; /* 固定幅で揃える */
-    height: 60px; /* 高さを揃える */
+    height: auto; /* 高さを自動調整 */
+    width: auto; /* 幅を自動調整 */
     text-align: center;
-    position: relative;
-    z-index: 7;
-    display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 7;
 }
 
 .links .link--youtube { background-color: var(--youtube-bg); }
@@ -730,13 +729,14 @@ header ul li a:focus {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 15px; /* モバイル用に間隔を調整 */
+        gap: 15px;
     }
     .links a {
-        width: 140px; /* モバイルで少し小さく */
-        height: 50px; /* 高さを調整 */
-        max-width: none; /* 固定幅を優先 */
-        margin: 0; /* 余分なマージンを削除 */
+        padding: 8px 16px; /* モバイル用にやや小さく */
+        width: auto;
+        height: auto;
+        max-width: none;
+        margin: 0;
     }
 }
 
@@ -1004,15 +1004,15 @@ header ul li a:focus {
     }
     .links a {
         font-size: 14px;
-        padding: 10px 20px;
-        width: 140px;
-        height: 50px;
+        padding: 8px 16px;
+        width: auto;
+        height: auto;
         max-width: none;
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         margin: 0;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
     }
