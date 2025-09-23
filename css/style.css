@@ -169,6 +169,7 @@ footer {
     background-color: var(--section2-bg);
     overflow: hidden;
     margin: 0;
+    z-index: 1;
 }
 
 .parallax__bg {
@@ -471,7 +472,7 @@ header ul li a:focus {
 /* セクション3 */
 .videos {
     background-color: var(--section3-bg);
-    padding: 45px 0 40px;
+    padding: 0px 0 40px;
 }
 
 .videos .container {
@@ -486,7 +487,7 @@ header ul li a:focus {
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 60px;
-}
+}   
 
 .videos .column {
     width: 46%;
@@ -742,7 +743,7 @@ header ul li a:focus {
         right: 0;
         width: 100%;
         background-color: rgba(26, 42, 42, 0.95);
-        z-index: 2;
+        z-index: 9997;
     }
     .nav--mobile ul {
         padding: 20px;
@@ -970,6 +971,50 @@ header ul li a:focus {
     }
 }
 
+/* スクランブルテキストアニメーション */
+.scramble-text {
+    display: block;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: normal;
+    text-indent: 0;
+}
+
+.scramble-line {
+    display: block;
+}
+
+.scramble-text span {
+    display: inline-block;
+    opacity: 1;
+    color: var(--accent-color); /* 初期：水色 (#00CED1) */
+    transition: color 0.3s ease; /* 色変化をスムーズに */
+}
+
+.scramble-text span.revealed {
+    color: var(--accent-alt); /* 終了：緑 (#00CD66) */
+}
+
+/* activitiesのh2スタイル（競合防止） */
+.activities h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-alt); /* デフォルト：緑 */
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .hero__title {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .hero__title {
+        font-size: 28px;
+    }
+}
 /* PC (1025px以上) */
 @media (min-width: 1025px) {
     .nav--mobile { display: none !important; }
