@@ -650,7 +650,7 @@ header ul li a:focus {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 20px; /* 間隔を広げて整頓 */
     justify-content: center;
     min-height: 150px;
 }
@@ -661,19 +661,22 @@ header ul li a:focus {
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px; /* 角を少し丸くして綺麗に */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     color: var(--footer-text);
     background-color: var(--accent-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 影を少し強化 */
     opacity: 1;
     visibility: visible;
     backdrop-filter: none;
-    width: 100%;
-    max-width: 300px;
+    width: 180px; /* 固定幅で揃える */
+    height: 60px; /* 高さを揃える */
     text-align: center;
     position: relative;
     z-index: 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .links .link--youtube { background-color: var(--youtube-bg); }
@@ -686,7 +689,7 @@ header ul li a:focus {
     transform: scale(1.05);
     background-color: var(--link-hover-bg);
     color: var(--link-hover-text);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     opacity: 1;
 }
 
@@ -715,13 +718,25 @@ header ul li a:focus {
 /* モバイル (600px以下) でのフェードイン調整 */
 @media (max-width: 600px) {
     .fade-in {
-        opacity: 1; /* モバイルでは初期表示を強制 */
-        transform: translateY(0); /* 初期位置を調整 */
-        transition: none; /* アニメーションを無効化 */
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
     }
     .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
+    }
+    .links ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px; /* モバイル用に間隔を調整 */
+    }
+    .links a {
+        width: 140px; /* モバイルで少し小さく */
+        height: 50px; /* 高さを調整 */
+        max-width: none; /* 固定幅を優先 */
+        margin: 0; /* 余分なマージンを削除 */
     }
 }
 
@@ -981,20 +996,25 @@ header ul li a:focus {
         font-size: 22px;
     }
     .links ul {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 12px;
+        gap: 15px;
         padding: 0 10px;
+        flex-wrap: wrap;
     }
     .links a {
         font-size: 14px;
         padding: 10px 20px;
-        width: 100%;
-        max-width: 250px;
+        width: 140px;
+        height: 50px;
+        max-width: none;
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
-        margin: 0 auto;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .theme-selector__btn {
         width: 20px;
