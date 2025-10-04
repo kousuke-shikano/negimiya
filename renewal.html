@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>renewal — Digital Theme</title>
+  <title>renewal — Mosaic Digital</title>
   <link rel="stylesheet" href="renewal.css" />
 </head>
 <body>
@@ -24,26 +24,23 @@
     <!-- HERO -->
     <section id="hero" class="hero">
       <div class="container hero-inner">
-        <!-- コード風表示（コメント風） -->
-        <pre class="digital-pre" data-text="// welcome to renewal — for people who dive deep into code."></pre>
-        <pre class="digital-pre" data-text="// nourish focus, keep flow."></pre>
+        <!-- コード風テキスト -->
+        <pre class="digital-pre" data-text="// welcome to renewal — mosaic demo"></pre>
 
-        <!-- コマンド風のメッセージ（typing + sequential） -->
-        <div class="cmd" aria-hidden="false">
+        <!-- コマンド風スクランブル -->
+        <div class="cmd">
           <div class="cmd-line">
             <span class="prompt">&gt; </span>
-            <span class="digital-line animate typing sequential" data-text="Initializing focus mode..."></span>
-          </div>
-          <div class="cmd-line">
-            <span class="prompt">&gt; </span>
-            <span class="digital-line animate typing random" data-text="Apply: balance + small break + snack"></span>
+            <span class="digital-line typing" data-text="Initializing mosaic mode..."></span>
           </div>
         </div>
+
+        <!-- モザイクタイル文字 -->
+        <div class="mosaic-text" data-text="HELLO" data-mosaic></div>
 
         <a class="cta" href="#product">次へ ▶</a>
       </div>
 
-      <!-- デジタルデコ（グリッチっぽい効果） -->
       <div class="hero-deco" aria-hidden="true"></div>
       <div class="scanline" aria-hidden="true"></div>
     </section>
@@ -56,17 +53,15 @@
         <div class="cards">
           <article class="card">
             <pre class="card-pre" data-text="// Liquid Balance"></pre>
-            <p class="card-desc animate" data-text="エネルギー補給と微量栄養を手早く。集中を切らさない小休止に。"></p>
+            <p class="card-desc animate" data-text="エネルギー補給と微量栄養を手早く。"></p>
           </article>
-
           <article class="card">
             <pre class="card-pre" data-text="// Flavor Mix"></pre>
-            <p class="card-desc animate" data-text="さっぱり風味の一杯で気分もリセット。長時間作業の合間に。"></p>
+            <p class="card-desc animate" data-text="さっぱり風味の一杯で気分もリセット。"></p>
           </article>
-
           <article class="card">
             <pre class="card-pre" data-text="// Pocket Snack"></pre>
-            <p class="card-desc animate" data-text="片手で食べられる栄養設計。キーボードの前でも扱いやすいサイズ。"></p>
+            <p class="card-desc animate" data-text="片手で食べられる栄養設計。"></p>
           </article>
         </div>
       </div>
@@ -76,17 +71,10 @@
     <section id="messages" class="panel alt">
       <div class="container">
         <pre class="panel-pre" data-text="// MESSAGES — 開発者の声"></pre>
-
         <ul class="messages">
-          <li>
-            <pre class="msg-pre" data-text="// \"短い休憩が、次の良いアイデアを運んできた。\" — A. Developer"></pre>
-          </li>
-          <li>
-            <pre class="msg-pre" data-text="// \"集中は習慣。小さな儀式が助けになる。\" — B. Engineer"></pre>
-          </li>
-          <li>
-            <pre class="msg-pre" data-text="// \"深い作業の前に、まずは水分と糖分を。\" — C. Hacker"></pre>
-          </li>
+          <li><pre class="msg-pre" data-text="// \"短い休憩が次の良いアイデアを運んできた。\" — A. Developer"></pre></li>
+          <li><pre class="msg-pre" data-text="// \"集中は習慣。小さな儀式が助けになる。\" — B. Engineer"></pre></li>
+          <li><pre class="msg-pre" data-text="// \"深い作業の前に、まずは水分と糖分を。\" — C. Hacker"></pre></li>
         </ul>
       </div>
     </section>
@@ -95,7 +83,7 @@
     <section id="campaign" class="panel">
       <div class="container">
         <pre class="panel-pre" data-text="// CAMPAIGN — #renewalFocus"></pre>
-        <p class="campaign-txt animate" data-text="ハッシュタグで体験をシェアすると抽選でギフトをプレゼント（デモ）。"></p>
+        <p class="campaign-txt animate" data-text="ハッシュタグで体験をシェアすると抽選でギフトをプレゼント"></p>
         <button id="openModal" class="btn">応募方法を見る</button>
       </div>
     </section>
@@ -103,11 +91,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <pre class="foot-pre" data-text="// © renewal project — crafted for focus"></pre>
+      <pre class="foot-pre" data-text="// © renewal project — mosaic demo"></pre>
     </div>
   </footer>
 
-  <!-- simple modal -->
+  <!-- モーダル -->
   <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <button id="closeModal" class="modal-close" aria-label="閉じる">✕</button>
