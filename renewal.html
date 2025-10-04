@@ -1,34 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Negimiya リニューアル</title>
-<link rel="stylesheet" href="./css/renewal.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>renewal — Digital Theme</title>
+  <link rel="stylesheet" href="renewal.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">renewal</h1>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+      <nav id="mainNav" class="main-nav" aria-hidden="true">
+        <a href="#hero">HOME</a>
+        <a href="#product">PRODUCT</a>
+        <a href="#messages">MESSAGES</a>
+        <a href="#campaign">CAMPAIGN</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- セクション1 -->
-<section>
-  <div class="bg layer1" style="background:linear-gradient(135deg,#1abc9c,#16a085);"></div>
-  <div class="bg layer2" style="background:linear-gradient(135deg,#2ecc71,#27ae60);"></div>
-  <div class="glass" data-text="Negimiya">Negimiya</div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <!-- コード風表示（コメント風） -->
+        <pre class="digital-pre" data-text="// welcome to renewal — for people who dive deep into code."></pre>
+        <pre class="digital-pre" data-text="// nourish focus, keep flow."></pre>
 
-<!-- セクション2 -->
-<section>
-  <div class="bg layer1" style="background:linear-gradient(135deg,#3498db,#2980b9);"></div>
-  <div class="bg layer2" style="background:linear-gradient(135deg,#5dade2,#2874a6);"></div>
-  <div class="glass" data-text="Welcome to our site">Welcome to our site</div>
-</section>
+        <!-- コマンド風のメッセージ（typing + sequential） -->
+        <div class="cmd" aria-hidden="false">
+          <div class="cmd-line">
+            <span class="prompt">&gt; </span>
+            <span class="digital-line animate typing sequential" data-text="Initializing focus mode..."></span>
+          </div>
+          <div class="cmd-line">
+            <span class="prompt">&gt; </span>
+            <span class="digital-line animate typing random" data-text="Apply: balance + small break + snack"></span>
+          </div>
+        </div>
 
-<!-- セクション3 -->
-<section>
-  <div class="bg layer1" style="background:linear-gradient(135deg,#9b59b6,#8e44ad);"></div>
-  <div class="bg layer2" style="background:linear-gradient(135deg,#af7ac5,#7d3c98);"></div>
-  <div class="glass" data-text="Enjoy smooth scrolling!">Enjoy smooth scrolling!</div>
-</section>
+        <a class="cta" href="#product">次へ ▶</a>
+      </div>
 
-<script src="renewal.js"></script>
+      <!-- デジタルデコ（グリッチっぽい効果） -->
+      <div class="hero-deco" aria-hidden="true"></div>
+      <div class="scanline" aria-hidden="true"></div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section id="product" class="panel">
+      <div class="container">
+        <pre class="panel-pre" data-text="// PRODUCT — 補給とリズム"></pre>
+
+        <div class="cards">
+          <article class="card">
+            <pre class="card-pre" data-text="// Liquid Balance"></pre>
+            <p class="card-desc animate" data-text="エネルギー補給と微量栄養を手早く。集中を切らさない小休止に。"></p>
+          </article>
+
+          <article class="card">
+            <pre class="card-pre" data-text="// Flavor Mix"></pre>
+            <p class="card-desc animate" data-text="さっぱり風味の一杯で気分もリセット。長時間作業の合間に。"></p>
+          </article>
+
+          <article class="card">
+            <pre class="card-pre" data-text="// Pocket Snack"></pre>
+            <p class="card-desc animate" data-text="片手で食べられる栄養設計。キーボードの前でも扱いやすいサイズ。"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MESSAGES -->
+    <section id="messages" class="panel alt">
+      <div class="container">
+        <pre class="panel-pre" data-text="// MESSAGES — 開発者の声"></pre>
+
+        <ul class="messages">
+          <li>
+            <pre class="msg-pre" data-text="// \"短い休憩が、次の良いアイデアを運んできた。\" — A. Developer"></pre>
+          </li>
+          <li>
+            <pre class="msg-pre" data-text="// \"集中は習慣。小さな儀式が助けになる。\" — B. Engineer"></pre>
+          </li>
+          <li>
+            <pre class="msg-pre" data-text="// \"深い作業の前に、まずは水分と糖分を。\" — C. Hacker"></pre>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CAMPAIGN -->
+    <section id="campaign" class="panel">
+      <div class="container">
+        <pre class="panel-pre" data-text="// CAMPAIGN — #renewalFocus"></pre>
+        <p class="campaign-txt animate" data-text="ハッシュタグで体験をシェアすると抽選でギフトをプレゼント（デモ）。"></p>
+        <button id="openModal" class="btn">応募方法を見る</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <pre class="foot-pre" data-text="// © renewal project — crafted for focus"></pre>
+    </div>
+  </footer>
+
+  <!-- simple modal -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close" aria-label="閉じる">✕</button>
+      <h4 id="modalTitle">応募方法（デモ）</h4>
+      <ol>
+        <li>公式をフォロー</li>
+        <li>指定投稿をリツイート</li>
+        <li>当選はDMでご連絡</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="renewal.js"></script>
 </body>
 </html>
